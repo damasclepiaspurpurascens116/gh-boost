@@ -187,6 +187,3 @@ content/    -- files changed per commit (auto-created, do not edit)
 ---
 <br/>
 
-**Keywords:**
-#gh-boost #github-activity #github-contributions #contribution-graph #github-bot #commit-generator #developer-tools #github-profile #automation #seo #github-streak
-
