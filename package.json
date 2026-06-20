@@ -1,0 +1,23 @@
+{
+  "name": "gh-boost",
+  "version": "3.0.0",
+  "description": "Natural GitHub contribution graph optimizer. Commits, issues, and PRs, automatically.",
+  "exports": "./run.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start":   "node run.js",
+    "dry":     "node run.js --dry",
+    "reset":   "node run.js --reset",
+    "commits": "node run.js --no-gh"
+  },
+  "keywords": ["github", "contributions", "profile", "streak", "github-bot", "contribution-graph", "commit-generator", "gh-boost", "developer-tools"],
+  "license": "MIT",
+  "engines": { "node": ">=18.0.0" },
+  "dependencies": {
+    "jsonfile":   "6.1.0",
+    "moment":     "2.30.1",
+    "random":     "4.1.0",
+    "simple-git": "3.25.0"
+  }
+}
